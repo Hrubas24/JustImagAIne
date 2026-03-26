@@ -52,19 +52,19 @@
     <div style="position:relative;display:flex;justify-content:center;">
       <div style="position:absolute;width:80px;height:80px;top:-20px;right:0;background:radial-gradient(circle,rgba(255,97,32,0.25),transparent);border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite;"></div>
       <div style="position:absolute;width:50px;height:50px;bottom:20px;left:-10px;background:radial-gradient(circle,rgba(42,86,214,0.3),transparent);border-radius:50%;pointer-events:none;animation:float 6s ease-in-out 2s infinite;"></div>
-      <div style="background:var(--surf);border:1px solid var(--border);border-radius:20px;padding:28px;width:100%;max-width:420px;box-shadow:0 2px 4px rgba(0,0,0,0.4),0 20px 60px rgba(0,0,0,0.5);">
+      <div style="background:var(--surf);border:1px solid var(--border);border-radius:20px;padding:28px;width:100%;max-width:420px;box-shadow:var(--shadow-lg);">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
           <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--orange));display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:white;font-family:'Bricolage Grotesque',sans-serif;">JI</div>
           <div>
-            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:0.9rem;">JustImagAIne Agent</div>
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:0.9rem;color:var(--text);">JustImagAIne Agent</div>
             <div style="font-size:0.75rem;color:var(--muted);">Aktivní · Odpovídá</div>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="padding:10px 14px;border-radius:12px 12px 2px 12px;background:rgba(42,86,214,0.15);border:1px solid rgba(42,86,214,0.2);color:#9BB8FF;font-size:0.82rem;align-self:flex-end;opacity:0;animation:bubble-in 0.5s ease 0.3s forwards;">Jak mi AI může pomoci s byznysem?</div>
-          <div style="padding:10px 14px;border-radius:12px 12px 12px 2px;background:rgba(255,255,255,0.04);border:1px solid var(--border);font-size:0.82rem;align-self:flex-start;opacity:0;animation:bubble-in 0.5s ease 1s forwards;">Analyzuji vaše procesy a navrhnu, kde AI ušetří čas, sníží náklady a zvýší konverze.</div>
-          <div style="padding:10px 14px;border-radius:12px 12px 2px 12px;background:rgba(42,86,214,0.15);border:1px solid rgba(42,86,214,0.2);color:#9BB8FF;font-size:0.82rem;align-self:flex-end;opacity:0;animation:bubble-in 0.5s ease 1.8s forwards;">Jak rychle to dokážete nasadit?</div>
-          <div style="display:flex;gap:4px;padding:10px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px 12px 12px 2px;align-self:flex-start;opacity:0;animation:bubble-in 0.5s ease 2.8s forwards;">
+          <div style="padding:10px 14px;border-radius:12px 12px 2px 12px;background:rgba(42,86,214,0.1);border:1px solid rgba(42,86,214,0.2);color:var(--blue);font-size:0.82rem;align-self:flex-end;opacity:0;animation:bubble-in 0.5s ease 0.3s forwards;">Jak mi AI může pomoci s byznysem?</div>
+          <div style="padding:10px 14px;border-radius:12px 12px 12px 2px;background:var(--bg);border:1px solid var(--border);font-size:0.82rem;align-self:flex-start;color:var(--text);opacity:0;animation:bubble-in 0.5s ease 1s forwards;">Analyzuji vaše procesy a navrhnu, kde AI ušetří čas, sníží náklady a zvýší konverze.</div>
+          <div style="padding:10px 14px;border-radius:12px 12px 2px 12px;background:rgba(42,86,214,0.1);border:1px solid rgba(42,86,214,0.2);color:var(--blue);font-size:0.82rem;align-self:flex-end;opacity:0;animation:bubble-in 0.5s ease 1.8s forwards;">Jak rychle to dokážete nasadit?</div>
+          <div style="display:flex;gap:4px;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:12px 12px 12px 2px;align-self:flex-start;opacity:0;animation:bubble-in 0.5s ease 2.8s forwards;">
             <span style="width:5px;height:5px;border-radius:50%;background:var(--orange);animation:typing 1.2s ease-in-out infinite;display:inline-block;"></span>
             <span style="width:5px;height:5px;border-radius:50%;background:var(--orange);animation:typing 1.2s ease-in-out 0.2s infinite;display:inline-block;"></span>
             <span style="width:5px;height:5px;border-radius:50%;background:var(--orange);animation:typing 1.2s ease-in-out 0.4s infinite;display:inline-block;"></span>
@@ -355,7 +355,7 @@ new IntersectionObserver((entries) => {
 
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
-  nav.style.background = window.scrollY > 40 ? 'rgba(7,9,15,0.93)' : 'rgba(7,9,15,0.75)';
+  nav.style.background = window.scrollY > 40 ? 'rgba(247,246,242,0.97)' : 'rgba(247,246,242,0.8)';
 }, { passive: true });
 
 function handleSubmit(e) {

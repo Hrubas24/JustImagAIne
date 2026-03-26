@@ -224,7 +224,7 @@ const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((e) => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1,rootMargin:'0px 0px -40px 0px'});
 reveals.forEach(el => io.observe(el));
 const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 40 ? 'rgba(7,9,15,0.93)' : 'rgba(7,9,15,0.75)'; }, {passive:true});
+window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 40 ? 'rgba(247,246,242,0.97)' : 'rgba(247,246,242,0.8)'; }, {passive:true});
 
 function switchTab(e, id) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
