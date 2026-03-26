@@ -366,14 +366,19 @@ async function handleSubmit(e) {
   btn.disabled = true;
   const data = new FormData(form);
   data.append('access_key', '54c92210-2f3f-4fab-a248-18f21d2c5875');
-  const res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: data});
-  const json = await res.json();
-  if (json.success) {
-    form.style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  } else {
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: data});
+    const json = await res.json();
+    if (json.success) {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      throw new Error(json.message);
+    }
+  } catch(err) {
     btn.textContent = 'Chyba, zkus znovu';
     btn.disabled = false;
+    console.error(err);
   }
 }
 </script>
