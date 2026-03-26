@@ -250,7 +250,8 @@
     </div>
 
     <div class="form-panel reveal reveal-delay-2">
-      <form id="contact-form" onsubmit="handleSubmit(event)">
+      <form id="contact-form" name="kontakt" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="kontakt" />
         <div class="form-row">
           <div class="form-group">
             <label>Jméno</label>
@@ -274,7 +275,6 @@
       <div class="form-success" id="form-success">
         ✅ Zpráva odeslána! Ozveme se vám do 24 hodin.
       </div>
-      <div id="form-error" style="display:none;margin-top:12px;padding:12px 16px;background:#fee2e2;border:1px solid #fca5a5;border-radius:8px;color:#b91c1c;font-size:14px;"></div>
     </div>
   </div>
 </section>
@@ -365,24 +365,23 @@ async function handleSubmit(e) {
   const btn = form.querySelector('button[type=submit]');
   btn.textContent = 'Odesílám...';
   btn.disabled = true;
-  const data = new FormData(form);
-  data.append('access_key', '54c92210-2f3f-4fab-a248-18f21d2c5875');
+  const data = new URLSearchParams(new FormData(form)).toString();
   try {
-    const res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: data});
-    const json = await res.json();
-    if (json.success) {
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data
+    });
+    if (res.ok) {
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     } else {
-      throw new Error(json.message);
+      throw new Error('Status ' + res.status);
     }
   } catch(err) {
     btn.textContent = 'Chyba, zkus znovu';
     btn.disabled = false;
     console.error(err);
-    const errDiv = document.getElementById('form-error');
-    errDiv.textContent = 'Chyba: ' + (err.message || 'Neznámá chyba');
-    errDiv.style.display = 'block';
   }
 }
 </script>
