@@ -1,0 +1,7 @@
+node_modules/
+package-lock.json
+package.json
+temporary screenshots/
+screenshot.mjs
+serve.mjs
+.DS_Store
