@@ -202,7 +202,24 @@ const io = new IntersectionObserver((e) => e.forEach(x => { if(x.isIntersecting)
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 40 ? 'rgba(247,246,242,0.97)' : 'rgba(247,246,242,0.8)'; }, {passive:true});
-function handleSubmit(e) { e.preventDefault(); e.target.style.display='none'; document.getElementById('form-success').style.display='block'; }
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type=submit]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  const data = new FormData(form);
+  data.append('access_key', '54c92210-2f3f-4fab-a248-18f21d2c5875');
+  const res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: data});
+  const json = await res.json();
+  if (json.success) {
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  } else {
+    btn.textContent = 'Error, try again';
+    btn.disabled = false;
+  }
+}
 </script>
 </body>
 </html>
