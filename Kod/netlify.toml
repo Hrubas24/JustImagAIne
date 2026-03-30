@@ -1,0 +1,37 @@
+[build]
+  publish = "Kod"
+
+[[redirects]]
+  from = "/ai-chatbot"
+  to   = "/ai-chatbot.html"
+  status = 200
+
+[[redirects]]
+  from = "/ai-agent"
+  to   = "/ai-agent.html"
+  status = 200
+
+[[redirects]]
+  from = "/priprava-dat-pro-ai"
+  to   = "/priprava-dat-pro-ai.html"
+  status = 200
+
+[[redirects]]
+  from = "/home-english"
+  to   = "/home-english.html"
+  status = 200
+
+[[redirects]]
+  from = "/reference"
+  to   = "/reference.html"
+  status = 200
+
+[[redirects]]
+  from = "/obchodni-podminky"
+  to   = "/obchodni-podminky.html"
+  status = 200
+
+[[redirects]]
+  from = "/ochrana-osobnich-udaju"
+  to   = "/ochrana-osobnich-udaju.html"
+  status = 200
