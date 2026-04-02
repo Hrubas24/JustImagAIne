@@ -20,11 +20,22 @@
     <li><a href="/priprava-dat-pro-ai">Data Preparation</a></li>
     <li><a href="/reference">References</a></li>
   </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-right">
     <a href="/" class="lang-btn">🇨🇿 CZ</a>
     <a href="#contact" class="btn-primary">Free Consultation →</a>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/ai-chatbot">AI Chatbot</a>
+  <a href="/ai-agent">AI Agent</a>
+  <a href="/priprava-dat-pro-ai">Data Preparation</a>
+  <a href="/reference">References</a>
+  <a href="/" style="border-bottom:none;">🇨🇿 CZ</a>
+  <a href="#contact" class="btn-primary mobile-cta">Free Consultation →</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -203,6 +214,17 @@ const io = new IntersectionObserver((e) => e.forEach(x => { if(x.isIntersecting)
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 40 ? 'rgba(247,246,242,0.97)' : 'rgba(247,246,242,0.8)'; }, {passive:true});
+
+const hamburger = document.getElementById('nav-hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}));
 async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;

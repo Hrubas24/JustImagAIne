@@ -20,11 +20,22 @@
     <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
     <li><a href="/reference">Reference</a></li>
   </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-right">
     <a href="/home-english" class="lang-btn">🇬🇧 EN</a>
     <a href="/#kontakt" class="btn-primary">Nezávazná konzultace →</a>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/ai-chatbot" class="active">AI Chatbot</a>
+  <a href="/ai-agent">AI Agent</a>
+  <a href="/priprava-dat-pro-ai">Příprava dat pro AI</a>
+  <a href="/reference">Reference</a>
+  <a href="/home-english" style="border-bottom:none;">🇬🇧 EN</a>
+  <a href="/#kontakt" class="btn-primary mobile-cta">Nezávazná konzultace →</a>
+</div>
 
 <!-- PAGE HERO -->
 <section class="page-hero">
@@ -103,7 +114,7 @@
       <button class="tab-btn" onclick="switchTab(event,'samosprava')">🏛️ Samospráva</button>
     </div>
 
-    <div id="tab-ecommerce" class="tab-panel active" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div id="tab-ecommerce" class="tab-panel active tab-content-grid">
       <div>
         <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-0.02em;margin-bottom:16px;">E-Commerce</h3>
         <p style="color:var(--muted);margin-bottom:20px;line-height:1.75;">AI Chatbot zvládne databázi s 10 000+ produkty a odpovídá jako zkušený prodejní specialista. Řeší reklamace, dotazy na dopravu i dostupnost — vše automaticky.</p>
@@ -122,7 +133,7 @@
       </div>
     </div>
 
-    <div id="tab-weby" class="tab-panel" style="display:none;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div id="tab-weby" class="tab-panel tab-content-grid">
       <div>
         <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-0.02em;margin-bottom:16px;">Webové stránky</h3>
         <p style="color:var(--muted);margin-bottom:20px;line-height:1.75;">Pomáhá návštěvníkům orientovat se v obsahu, okamžitě odpovídá na dotazy a výrazně snižuje počet zbytečných emailů a telefonátů na vaši firmu.</p>
@@ -141,7 +152,7 @@
       </div>
     </div>
 
-    <div id="tab-samosprava" class="tab-panel" style="display:none;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <div id="tab-samosprava" class="tab-panel tab-content-grid">
       <div>
         <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-0.02em;margin-bottom:16px;">Samospráva a instituce</h3>
         <p style="color:var(--muted);margin-bottom:20px;line-height:1.75;">90% přesnost na webech s 10 000+ URL. Slouží regionálním úřadům a obcím, kde je informační přetížení obrovské a kapacita pracovníků omezená.</p>
@@ -226,13 +237,22 @@ reveals.forEach(el => io.observe(el));
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 40 ? 'rgba(247,246,242,0.97)' : 'rgba(247,246,242,0.8)'; }, {passive:true});
 
+const hamburger = document.getElementById('nav-hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}));
+
 function switchTab(e, id) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => { p.classList.remove('active'); p.style.display = 'none'; });
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   e.target.classList.add('active');
-  const panel = document.getElementById('tab-' + id);
-  panel.style.display = 'grid';
-  panel.classList.add('active');
+  document.getElementById('tab-' + id).classList.add('active');
 }
 </script>
 </body>

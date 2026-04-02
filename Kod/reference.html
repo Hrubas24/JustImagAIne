@@ -20,11 +20,22 @@
     <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
     <li><a href="/reference" class="active">Reference</a></li>
   </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-right">
     <a href="/home-english" class="lang-btn">🇬🇧 EN</a>
     <a href="/#kontakt" class="btn-primary">Nezávazná konzultace →</a>
   </div>
 </nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/ai-chatbot">AI Chatbot</a>
+  <a href="/ai-agent">AI Agent</a>
+  <a href="/priprava-dat-pro-ai">Příprava dat pro AI</a>
+  <a href="/reference" class="active">Reference</a>
+  <a href="/home-english" style="border-bottom:none;">🇬🇧 EN</a>
+  <a href="/#kontakt" class="btn-primary mobile-cta">Nezávazná konzultace →</a>
+</div>
 
 <!-- HERO -->
 <section class="page-hero">
@@ -46,7 +57,7 @@
 <section style="padding:60px 5vw 100px;border-top:1px solid var(--border);">
   <div class="container">
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <div class="ref-grid">
 
       <!-- Swim&Relax — live -->
       <a href="https://www.swim-relax.cz" target="_blank" rel="noopener" class="card reveal" style="display:flex;flex-direction:column;text-decoration:none;color:inherit;">
@@ -284,6 +295,17 @@ const io = new IntersectionObserver((e) => e.forEach(x => { if(x.isIntersecting)
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 40 ? 'rgba(247,246,242,0.97)' : 'rgba(247,246,242,0.8)'; }, {passive:true});
+
+const hamburger = document.getElementById('nav-hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}));
 </script>
 </body>
 </html>
