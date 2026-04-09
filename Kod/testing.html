@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Widget Test — JustImagAIne</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #F7F6F2;
+      color: #111218;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: #717585;
+    }
+    p {
+      font-size: 0.9rem;
+      color: #717585;
+    }
+  </style>
+</head>
+<body>
+  <h1>Widget testovací stránka</h1>
+  <p>justimagaine.com/testing</p>
+
+  <script type="text/javascript">
+  (function (d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+
+    v.onload = function () {
+      window.voiceflow.chat.load({
+        verify: { projectID: "6915ac164b68b23453e7804b" },
+        url: "https://general-runtime.voiceflow.com",
+        versionID: "production",
+        voice: { url: "https://runtime-api.voiceflow.com" },
+
+        assistant: {
+          stylesheet: "https://hrubas24.github.io/DataApex/Custom_widget.css"
+        }
+      });
+      startThumbInjection();
+    };
+
+    v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+    v.type = "text/javascript";
+    s.parentNode.insertBefore(v, s);
+
+    /* ===== Shadow DOM SAFE SELECTOR ===== */
+    function deepQuerySelector(selector, root) {
+      root = root || document;
+      var found = root.querySelector(selector);
+      if (found) return found;
+      var all = root.querySelectorAll("*");
+      for (var i = 0; i < all.length; i++) {
+        if (all[i].shadowRoot) {
+          var inside = deepQuerySelector(selector, all[i].shadowRoot);
+          if (inside) return inside;
+        }
+      }
+      return null;
+    }
+
+    function injectThumbs() {
+      var header = deepQuerySelector(".vfrc-header");
+      if (!header) return false;
+      if (header.querySelector("#vf-thumb-feedback")) return true;
+
+      var anyBtn = header.querySelector("button");
+      var controls = anyBtn ? anyBtn.parentElement : header;
+
+      var wrap = document.createElement("div");
+      wrap.id = "vf-thumb-feedback";
+      wrap.style.display = "inline-flex";
+      wrap.style.gap = "8px";
+      wrap.style.alignItems = "center";
+      wrap.style.marginRight = "8px";
+      wrap.style.transform = "translateY(1px)";
+
+      wrap.innerHTML =
+        '<button data-vf-thumb="up" style="' +
+          'width:28px;height:28px;' +
+          'border-radius:6px;' +
+          'background:transparent;' +
+          'border:0;cursor:pointer;' +
+          'display:flex;align-items:center;justify-content:center;' +
+          'transition:background .15s ease, transform .15s ease">' +
+          '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round">' +
+            '<path d="M7 22H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h2"/>' +
+            '<path d="M7 11l5-8a2 2 0 0 1 3 1v6h4a2 2 0 0 1 2 2l-3 8a2 2 0 0 1-2 1H7z"/>' +
+          '</svg>' +
+        '</button>' +
+
+        '<button data-vf-thumb="down" style="' +
+          'width:28px;height:28px;' +
+          'border-radius:6px;' +
+          'background:transparent;' +
+          'border:0;cursor:pointer;' +
+          'display:flex;align-items:center;justify-content:center;' +
+          'transition:background .15s ease, transform .15s ease">' +
+          '<svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round">' +
+            '<path d="M17 2h2a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-2"/>' +
+            '<path d="M17 13l-5 8a2 2 0 0 1-3-1v-6H5a2 2 0 0 1-2-2l3-8a2 2 0 0 1 2-1h9z"/>' +
+          '</svg>' +
+        '</button>';
+
+      controls.insertBefore(wrap, controls.firstChild);
+
+      /* ===== HOVER EFEKT ===== */
+      wrap.querySelectorAll("button").forEach(function (btn) {
+        btn.addEventListener("mouseenter", function () {
+          btn.style.background = "rgba(255,255,255,0.18)";
+          btn.style.transform = "scale(1.08)";
+        });
+        btn.addEventListener("mouseleave", function () {
+          btn.style.background = "transparent";
+          btn.style.transform = "scale(1)";
+        });
+      });
+
+      /* ===== CLICK → VOICEFLOW EVENT ===== */
+      wrap.addEventListener("click", function (e) {
+        var btn = e.target.closest("button[data-vf-thumb]");
+        if (!btn) return;
+        window.voiceflow.chat.interact({
+          type: "event",
+          payload: {
+            event: {
+              name: btn.dataset.vfThumb === "up" ? "thumbs_up" : "thumbs_down"
+            }
+          }
+        });
+      });
+
+      return true;
+    }
+
+    function startThumbInjection() {
+      var tries = 0;
+      var timer = setInterval(function () {
+        tries++;
+        if (injectThumbs() || tries > 200) clearInterval(timer);
+      }, 250);
+
+      new MutationObserver(injectThumbs)
+        .observe(document.documentElement, { childList: true, subtree: true });
+    }
+  })(document, "script");
+  </script>
+</body>
+</html>
