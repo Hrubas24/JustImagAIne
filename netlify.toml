@@ -35,3 +35,8 @@
   from = "/ochrana-osobnich-udaju"
   to   = "/ochrana-osobnich-udaju.html"
   status = 200
+
+[[redirects]]
+  from = "/testing"
+  to   = "/testing.html"
+  status = 200
