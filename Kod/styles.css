@@ -870,6 +870,52 @@ footer {
   align-items: center;
 }
 
+/* ── ROI CALCULATOR ── */
+.roi-section { padding: 80px 5vw; background: var(--surf); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
+.roi-field label { font-size: 0.78rem; font-weight: 500; color: var(--muted); letter-spacing: 0.03em; display: block; margin-bottom: 8px; }
+.roi-val { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); margin-bottom: 8px; }
+input[type=range] {
+  width: 100%; height: 4px; border-radius: 2px;
+  -webkit-appearance: none; appearance: none;
+  background: var(--border); outline: none; cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--orange); border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(255,97,32,0.35);
+  cursor: pointer; transition: transform .15s;
+}
+input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+input[type=range]::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--orange); border: 2px solid #fff;
+  cursor: pointer;
+}
+.roi-results { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--border); }
+.roi-result { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.roi-result-num { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.7rem; letter-spacing: -0.03em; color: var(--orange); line-height: 1; margin-bottom: 6px; }
+.roi-result-lbl { font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
+@media(max-width:700px) {
+  .roi-grid { grid-template-columns: 1fr; }
+  .roi-results { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:480px) { .roi-results { grid-template-columns: 1fr; } }
+
+/* ── SMART FORM ── */
+.form-progress-bar { height: 3px; background: var(--border); border-radius: 2px; margin-bottom: 24px; overflow: hidden; }
+.form-progress-fill { height: 100%; background: linear-gradient(90deg, var(--orange), #FF9A5C); border-radius: 2px; transition: width .4s ease; width: 0%; }
+.form-group input.valid, .form-group textarea.valid { border-color: rgba(74,222,128,0.6); background: #fff; }
+.form-group input.invalid, .form-group textarea.invalid { border-color: rgba(239,68,68,0.45); }
+.form-field-wrap { position: relative; }
+.form-field-icon { position: absolute; right: 11px; top: 50%; transform: translateY(-50%); font-size: 0.85rem; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.form-field-icon.show { opacity: 1; }
+.form-hint { font-size: 0.75rem; margin-top: 4px; line-height: 1.4; min-height: 16px; }
+.form-hint.ok { color: #16a34a; }
+.form-hint.err { color: #dc2626; }
+.form-charcount { font-size: 0.72rem; color: var(--muted); float: right; }
+
 /* ── MOBILE ── */
 @media (max-width: 960px) {
   .nav-center { display: none; }
