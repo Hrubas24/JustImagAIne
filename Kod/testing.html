@@ -42,7 +42,7 @@
   (function (d, t) {
     var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
 
-    v.onload = function () {
+    function loadVoiceflow(payload) {
       window.voiceflow.chat.load({
         verify: { projectID: "6915ac164b68b23453e7804b" },
         url: "https://general-runtime.voiceflow.com",
@@ -51,9 +51,37 @@
 
         assistant: {
           stylesheet: "https://cdn.jsdelivr.net/gh/hrubas24/DataApex@main/Custom_widget.css"
+        },
+
+        launch: {
+          event: {
+            type: "launch",
+            payload: payload
+          }
         }
       });
       startThumbInjection();
+    }
+
+    v.onload = function () {
+      var fallbackPayload = {
+        IP_Address: "X",
+        currentURL: window.location.href || "X",
+        browser_lang: navigator.language || "X"
+      };
+
+      fetch("https://api.ipify.org?format=json")
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          loadVoiceflow({
+            IP_Address: data.ip || "X",
+            currentURL: window.location.href || "X",
+            browser_lang: navigator.language || "X"
+          });
+        })
+        .catch(function () {
+          loadVoiceflow(fallbackPayload);
+        });
     };
 
     v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
