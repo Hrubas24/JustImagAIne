@@ -17,9 +17,14 @@
   status = 200
 
 [[redirects]]
-  from = "/home-english"
-  to   = "/home-english.html"
+  from = "/cz"
+  to   = "/domu.html"
   status = 200
+
+[[redirects]]
+  from = "/home-english"
+  to   = "/"
+  status = 301
 
 [[redirects]]
   from = "/reference"
