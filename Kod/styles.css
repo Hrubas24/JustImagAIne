@@ -765,11 +765,39 @@ footer {
   letter-spacing: -0.02em;
 }
 
+.prose h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 28px 0 10px;
+  letter-spacing: -0.01em;
+}
+
 .prose p { margin-bottom: 16px; }
 .prose ul { padding-left: 20px; margin-bottom: 16px; }
 .prose ul li { margin-bottom: 6px; }
 .prose a { color: var(--orange); text-decoration: none; }
 .prose a:hover { text-decoration: underline; }
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+}
+.prose th, .prose td {
+  text-align: left;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+.prose th {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  color: var(--text);
+  font-weight: 700;
+  background: rgba(0,0,0,0.02);
+}
 
 /* ── HAMBURGER / MOBILE NAV ── */
 .nav-hamburger {
