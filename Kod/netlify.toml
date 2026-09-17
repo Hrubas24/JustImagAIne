@@ -40,3 +40,33 @@
   from = "/testing"
   to   = "/testing.html"
   status = 200
+
+[[redirects]]
+  from = "/ai-chatbot-english"
+  to   = "/ai-chatbot-english.html"
+  status = 200
+
+[[redirects]]
+  from = "/ai-agent-english"
+  to   = "/ai-agent-english.html"
+  status = 200
+
+[[redirects]]
+  from = "/priprava-dat-pro-ai-english"
+  to   = "/priprava-dat-pro-ai-english.html"
+  status = 200
+
+[[redirects]]
+  from = "/reference-english"
+  to   = "/reference-english.html"
+  status = 200
+
+[[redirects]]
+  from = "/obchodni-podminky-english"
+  to   = "/obchodni-podminky-english.html"
+  status = 200
+
+[[redirects]]
+  from = "/ochrana-osobnich-udaju-english"
+  to   = "/ochrana-osobnich-udaju-english.html"
+  status = 200
