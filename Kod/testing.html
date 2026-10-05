@@ -219,15 +219,23 @@
       st.textContent =
         '.vfrc-system-response[dir="rtl"] { direction: rtl !important; }' +
         '.vfrc-system-response .markdown :is(p,h1,h2,h3,h4,h5,h6,li,em,a) {' +
-        '  unicode-bidi: normal !important; text-align: start !important; }';
+        '  unicode-bidi: normal !important; text-align: start !important; }' +
+        '.vfrc-system-response--actions[dir="rtl"] { direction: rtl !important; }' +
+        '.vfrc-system-response--actions[dir="rtl"] .vfrc-button {' +
+        '  text-align: start !important; }';
       root.appendChild(st);
 
       function fix() {
-        root.querySelectorAll(".vfrc-system-response").forEach(function (row) {
-          var md = row.querySelector(".markdown");
-          if (!md) return;
+        root.querySelectorAll(".vfrc-system-response--container").forEach(function (c) {
+          var row = c.querySelector(".vfrc-system-response");
+          var md = row && row.querySelector(".markdown");
+          if (!row || !md) return;
+
           var d = dirOf(md.textContent);
           if (d && row.dir !== d) { row.dir = d; md.dir = d; }
+
+          var actions = c.querySelector(".vfrc-system-response--actions");
+          if (actions && row.dir && actions.dir !== row.dir) actions.dir = row.dir;
         });
       }
 
