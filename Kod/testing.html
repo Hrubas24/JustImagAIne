@@ -189,7 +189,7 @@
         .observe(document.documentElement, { childList: true, subtree: true });
     }
 
-    /* ===== RTL (arabstina, hebrejstina...) ===== */
+    /* ===== RTL (arabstina, hebrejstina...) - jen logika, vzhled je v Custom_widget.css ===== */
     function startRtlFix() {
       var tries = 0;
       var timer = setInterval(function () {
@@ -205,7 +205,7 @@
     }
 
     function setupRtl(root) {
-      var RTL = /[֐-ࣿ]/, LTR = /[A-Za-zÀ-ɏ]/;
+      var RTL = /[\u0590-\u08FF]/, LTR = /[A-Za-z\u00C0-\u024F]/;
 
       function dirOf(text) {
         for (var i = 0; i < text.length; i++) {
@@ -214,16 +214,6 @@
         }
         return null; /* zatim zadny silny znak (zacatek streamu) */
       }
-
-      var st = document.createElement("style");
-      st.textContent =
-        '.vfrc-system-response[dir="rtl"] { direction: rtl !important; }' +
-        '.vfrc-system-response .markdown :is(p,h1,h2,h3,h4,h5,h6,li,em,a) {' +
-        '  unicode-bidi: normal !important; text-align: start !important; }' +
-        '.vfrc-system-response--actions[dir="rtl"] { direction: rtl !important; }' +
-        '.vfrc-system-response--actions[dir="rtl"] .vfrc-button {' +
-        '  text-align: start !important; }';
-      root.appendChild(st);
 
       function fix() {
         root.querySelectorAll(".vfrc-system-response--container").forEach(function (c) {
