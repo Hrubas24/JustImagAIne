@@ -181,29 +181,23 @@ section { padding: 104px 0; }
 
 /* References */
 .refs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); overflow: hidden; }
-.ref-card { background: var(--paper); padding: 32px; display: flex; flex-direction: column; transition: background-color .15s ease; }
+/* Each card spans 6 rows of the parent grid (logo, name, kind, text, stats, tags) and shares
+   their heights with the other cards in the same row, so the divider lines and numbers align. */
+.ref-card { background: var(--paper); padding: 32px; display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; align-content: start; transition: background-color .15s ease; }
 .ref-card:hover { background: var(--white); }
 .ref-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 44px; }
 .ref-top img { display: block; width: auto; max-width: 150px; filter: brightness(0); opacity: .75; }
 .ref-status { font-size: 13px; color: var(--ink-2); white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
 .ref-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #3F8F4E; }
-.ref-status--soon::before { background: var(--muted); }
 .ref-card h3 { font-size: 26px; margin-top: 24px; transition: color .15s ease; }
 .ref-card:hover h3 { color: var(--accent); }
 .ref-kind { font-size: 14px; color: var(--muted); margin-top: 4px; }
-.ref-card > p { color: var(--ink-2); font-size: 15px; margin-top: 16px; flex: 1; }
-.ref-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+.ref-card > p { color: var(--ink-2); font-size: 15px; margin-top: 16px; }
+.ref-card > .ref-kind { margin-top: 4px; }
+.ref-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
 .ref-stats strong { display: block; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 1.1; color: var(--accent); }
 .ref-stats span { font-size: 13px; color: var(--ink-2); }
-.ref-tags { margin-top: 20px; font-size: 13px; color: var(--muted); }
-.ref-card > .ref-kind, .ref-card > .ref-tags { flex: none; }
-.ref-card > .ref-kind { margin-top: 4px; }
-.ref-card > .ref-tags { margin-top: 20px; }
-.ref-card--soon { color: var(--ink-2); }
-.progress { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
-.progress-bar { height: 4px; background: var(--line); border-radius: 4px; overflow: hidden; }
-.progress-bar i { display: block; height: 100%; background: var(--accent); }
-.progress span { display: block; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.ref-card > .ref-tags { margin-top: 20px; font-size: 13px; color: var(--muted); }
 
 /* CTA band */
 .cta { border-top: 1px solid var(--line); }
