@@ -31,21 +31,23 @@ document.querySelectorAll('[role="tablist"]').forEach(list => {
 
 // ── ROI calculator ──
 function updateROI() {
+  // EN shows US dollars (wage slider is in $/hr), CZ shows Kč
   const locale = EN ? 'en' : 'cs';
-  const cur = EN ? ' CZK' : ' Kč';
+  const money = n => EN ? '$' + n.toLocaleString('en') : n.toLocaleString('cs') + ' Kč';
+  const step = EN ? 10 : 100; // rounding of the monthly figure
   const inquiries = +document.getElementById('r-inquiries').value;
   const wage = +document.getElementById('r-wage').value;
   const time = +document.getElementById('r-time').value;
   const ai = +document.getElementById('r-ai').value / 100;
   document.getElementById('rv-inquiries').textContent = inquiries.toLocaleString(locale);
-  document.getElementById('rv-wage').textContent = wage + cur;
+  document.getElementById('rv-wage').textContent = money(wage);
   document.getElementById('rv-time').textContent = time + ' min';
   document.getElementById('rv-ai').textContent = Math.round(ai * 100) + (EN ? '%' : ' %');
   const hoursPerMonth = (inquiries * ai * time) / 60;
   const costPerMonth = hoursPerMonth * wage;
   document.getElementById('res-hours').textContent = Math.round(hoursPerMonth) + (EN ? ' hrs' : ' hod');
-  document.getElementById('res-cost').textContent = (Math.round(costPerMonth / 100) * 100).toLocaleString(locale) + cur;
-  document.getElementById('res-year').textContent = (Math.round(costPerMonth * 12 / 1000) * 1000).toLocaleString(locale) + cur;
+  document.getElementById('res-cost').textContent = money(Math.round(costPerMonth / step) * step);
+  document.getElementById('res-year').textContent = money(Math.round(costPerMonth * 12 / (step * 10)) * step * 10);
 }
 if (document.getElementById('r-inquiries')) {
   document.querySelectorAll('.roi input[type=range]').forEach(r => r.addEventListener('input', updateROI));
