@@ -186,7 +186,9 @@ section { padding: 104px 0; }
 .ref-card { background: var(--paper); padding: 32px; display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; align-content: start; transition: background-color .15s ease; }
 .ref-card:hover { background: var(--white); }
 .ref-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 44px; }
-.ref-top img { display: block; width: auto; max-width: 150px; filter: brightness(0); opacity: .75; }
+.ref-top img { display: block; width: auto; max-width: 150px; }
+/* FBFit's logo is white (made for a dark background), so it is darkened to stay visible */
+.ref-top img.logo-fbfit { filter: brightness(0); }
 .ref-status { font-size: 13px; color: var(--ink-2); white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
 .ref-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #3F8F4E; }
 .ref-card h3 { font-size: 26px; margin-top: 24px; transition: color .15s ease; }
