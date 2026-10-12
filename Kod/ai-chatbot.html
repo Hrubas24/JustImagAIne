@@ -5,255 +5,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Chatbot — JustImagAIne</title>
   <meta name="description" content="AI Chatbot — váš asistent zákazníků. Dostupnost 24/7, snižuje náklady, zvyšuje konverze." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<nav id="main-nav">
-  <a href="/cz" class="nav-logo">
-    <img src="Assets/JI%20Transparent%20logo.png" alt="JustImagAIne" />
-    <span class="nav-logo-text">JustImagA<em>I</em>ne</span>
-  </a>
-  <ul class="nav-center">
-    <li><a href="/ai-chatbot" class="active">AI Chatbot</a></li>
-    <li><a href="/ai-agent">AI Agent</a></li>
-    <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
-    <li><a href="/reference">Reference</a></li>
-  </ul>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-right">
-    <a href="/ai-chatbot-english" class="lang-btn">🇬🇧 EN</a>
-    <a href="/cz#kontakt" class="btn-primary">Nezávazná konzultace →</a>
+<nav>
+  <div class="wrap">
+    <a href="/cz" class="logo"><img src="Assets/JI%20Transparent%20logo.png" alt="" />JustImagAIne</a>
+    <ul class="nav-links">
+      <li><a href="/ai-chatbot" class="active" aria-current="page">AI Chatbot</a></li>
+      <li><a href="/ai-agent">AI Agent</a></li>
+      <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
+      <li><a href="/reference">Reference</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/ai-chatbot-english" class="lang" hreflang="en">EN</a>
+      <a href="/cz#kontakt" class="btn">Nezávazná konzultace</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/ai-chatbot" class="active" aria-current="page">AI Chatbot</a>
+    <a href="/ai-agent">AI Agent</a>
+    <a href="/priprava-dat-pro-ai">Příprava dat pro AI</a>
+    <a href="/reference">Reference</a>
+    <a href="/ai-chatbot-english" hreflang="en">English</a>
+    <a href="/cz#kontakt" class="btn">Nezávazná konzultace</a>
   </div>
 </nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="/ai-chatbot" class="active">AI Chatbot</a>
-  <a href="/ai-agent">AI Agent</a>
-  <a href="/priprava-dat-pro-ai">Příprava dat pro AI</a>
-  <a href="/reference">Reference</a>
-  <a href="/ai-chatbot-english" style="border-bottom:none;">🇬🇧 EN</a>
-  <a href="/cz#kontakt" class="btn-primary mobile-cta">Nezávazná konzultace →</a>
-</div>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="glow glow-orange" style="width:600px;height:600px;top:-150px;right:-80px;position:absolute;"></div>
-  <div class="page-hero-inner">
-    <div class="hero-badge" style="margin-bottom:24px;"><span class="dot"></span>AI Chatbot</div>
-    <h1 class="hero-h1" style="max-width:700px;">
-      AI Chatbot<br/>
-      <span class="text-gradient">váš asistent zákazníků</span>
-    </h1>
-    <p class="hero-sub">
-      Digitální rozhraní pro komunikaci s uživateli. Komunikuje v reálném čase, poskytuje rychlé a srozumitelné odpovědi a pomáhá efektivně vyřizovat běžné dotazy bez zatěžování zákaznické podpory.
-    </p>
-    <div class="hero-ctas">
-      <a href="/cz#kontakt" class="btn-primary btn-lg">Mám zájem o AI Chatbota →</a>
-      <a href="#vyuziti" class="btn-ghost btn-lg">Kde ho využít</a>
-    </div>
-  </div>
-</section>
-
-<!-- 6 BENEFITS -->
-<section style="padding:80px 5vw;border-top:1px solid var(--border);">
-  <div class="container">
-    <p class="section-label reveal">Co vám chatbot přinese</p>
-    <h2 class="section-h2 reveal reveal-delay-1">Šest důvodů, proč<br/>nasadit AI Chatbota</h2>
-
-    <div class="grid-3" style="margin-top:48px;gap:20px;">
-      <div class="card reveal">
-        <div class="card-icon">🕐</div>
-        <h3>Dostupnost 24/7</h3>
-        <p>Chatbot nikdy nespí, nebere dovolenou a neodchází na oběd. Zákazníci dostanou odpověď okamžitě — ve dne i v noci, o víkendech i svátcích.</p>
-      </div>
-
-      <div class="card reveal reveal-delay-1">
-        <div class="card-icon">💰</div>
-        <h3>Sníží náklady</h3>
-        <p>Automatizace rutinních dotazů výrazně snižuje vytížení zákaznické podpory. Méně telefonátů, méně emailů, méně přesčasů — při stejné nebo lepší kvalitě obsluhy.</p>
-      </div>
-
-      <div class="card reveal reveal-delay-2">
-        <div class="card-icon">😊</div>
-        <h3>Zvýší spokojenost</h3>
-        <p>Zákazníci nemají rádi čekání. Okamžitá a přesná odpověď na jejich dotaz výrazně zlepšuje uživatelský zážitek a celkový dojem z vaší značky.</p>
-      </div>
-
-      <div class="card reveal reveal-delay-1">
-        <div class="card-icon">📈</div>
-        <h3>Zvýší konverze</h3>
-        <p>Chatbot aktivně provádí zákazníky nákupním procesem, odpovídá na produktové dotazy a pomáhá překonat pochybnosti — přímo v momentě rozhodování.</p>
-      </div>
-
-      <div class="card reveal reveal-delay-2">
-        <div class="card-icon">✅</div>
-        <h3>Omezí lidské chyby</h3>
-        <p>AI vždy odpovídá podle aktuálních podkladů a nastaveného scénáře. Žádné přeřeknutí, žádná zapomenutá informace — každý zákazník dostane konzistentní odpověď.</p>
-      </div>
-
-      <div class="card reveal reveal-delay-3">
-        <div class="card-icon">💼</div>
-        <h3>Zlepší dojem</h3>
-        <p>Moderní, rychlý a inteligentní chatbot signalizuje, že vaše firma drží krok s dobou. Profesionální první dojem, který zákazníci nezapomenou.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- USE CASES -->
-<section id="vyuziti" style="background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 5vw;">
-  <div class="container">
-    <p class="section-label reveal">Kde to funguje</p>
-    <h2 class="section-h2 reveal reveal-delay-1">Využití napříč odvětvími</h2>
-
-    <div class="tabs reveal reveal-delay-2" style="margin-top:40px;">
-      <button class="tab-btn active" onclick="switchTab(event,'ecommerce')">🛒 E-Commerce</button>
-      <button class="tab-btn" onclick="switchTab(event,'weby')">🌐 Webové stránky</button>
-      <button class="tab-btn" onclick="switchTab(event,'samosprava')">🏛️ Samospráva</button>
-    </div>
-
-    <div id="tab-ecommerce" class="tab-panel active tab-content-grid">
-      <div>
-        <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-0.02em;margin-bottom:16px;">E-Commerce</h3>
-        <p style="color:var(--muted);margin-bottom:20px;line-height:1.75;">AI Chatbot zvládne databázi s 10 000+ produkty a odpovídá jako zkušený prodejní specialista. Řeší reklamace, dotazy na dopravu i dostupnost — vše automaticky.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Odborné znalosti celého produktového katalogu</li>
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Automatické vyřizování reklamací a dotazů na dopravu</li>
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Aktivní podpora prodejní konverze</li>
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Personalizované doporučení produktů</li>
-        </ul>
-      </div>
-      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px;">
-        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:3rem;font-weight:800;letter-spacing:-0.04em;">10 000<span style="color:var(--orange);">+</span></div>
-        <div style="color:var(--muted);font-size:0.85rem;margin-bottom:24px;">produktů v databázi bez problémů</div>
-        <div style="height:1px;background:var(--border);margin-bottom:24px;"></div>
-        <div style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Chatbot reaguje jako zkušený prodejní asistent — zná celý katalog, zboží, ceny i aktuální skladové zásoby.</div>
-      </div>
-    </div>
-
-    <div id="tab-weby" class="tab-panel tab-content-grid">
-      <div>
-        <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-0.02em;margin-bottom:16px;">Webové stránky</h3>
-        <p style="color:var(--muted);margin-bottom:20px;line-height:1.75;">Pomáhá návštěvníkům orientovat se v obsahu, okamžitě odpovídá na dotazy a výrazně snižuje počet zbytečných emailů a telefonátů na vaši firmu.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Navigace uživatelů napříč obsahem webu</li>
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Okamžitý přístup k informacím</li>
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Zvýšení zapojení a doby na stránce</li>
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Snížení počtu zbytečných kontaktů</li>
-        </ul>
-      </div>
-      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px;">
-        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:3rem;font-weight:800;letter-spacing:-0.04em;"><span style="color:var(--orange);">↓</span>60%</div>
-        <div style="color:var(--muted);font-size:0.85rem;margin-bottom:24px;">méně příchozích emailů a telefonátů</div>
-        <div style="height:1px;background:var(--border);margin-bottom:24px;"></div>
-        <div style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Zákazníci si sami najdou odpovědi — váš tým řeší jen skutečně složité případy.</div>
-      </div>
-    </div>
-
-    <div id="tab-samosprava" class="tab-panel tab-content-grid">
-      <div>
-        <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-0.02em;margin-bottom:16px;">Samospráva a instituce</h3>
-        <p style="color:var(--muted);margin-bottom:20px;line-height:1.75;">90% přesnost na webech s 10 000+ URL. Slouží regionálním úřadům a obcím, kde je informační přetížení obrovské a kapacita pracovníků omezená.</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> 90% přesnost na rozsáhlých webech</li>
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Dostupné pro regionální úřady a obce</li>
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Úspora 1,76 mil. Kč ročně</li>
-          <li style="display:flex;gap:10px;color:var(--muted);font-size:0.9rem;"><span style="color:var(--orange);">→</span> Odbavuje dotazy občanů automaticky</li>
-        </ul>
-      </div>
-      <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px;">
-        <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:3rem;font-weight:800;letter-spacing:-0.04em;">1,76M<span style="color:var(--orange);"> Kč</span></div>
-        <div style="color:var(--muted);font-size:0.85rem;margin-bottom:24px;">průměrná roční úspora</div>
-        <div style="height:1px;background:var(--border);margin-bottom:24px;"></div>
-        <div style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Chatbot zvládne 90 % dotazů občanů — úředníci se mohou soustředit na složitější agendu.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-glow"></div>
-  <div class="container">
-    <p class="section-label" style="justify-content:center;">Připraveni začít?</p>
-    <h2>Spusťte AI Chatbota<br/><span class="text-gradient">pro váš byznys</span></h2>
-    <p>Zdarma probereme vaši situaci a ukážeme, jak by chatbot konkrétně fungoval u vás.</p>
-    <div class="cta-btns">
-      <a href="/cz#kontakt" class="btn-primary btn-lg">Mám zájem o AI Chatbota →</a>
-      <a href="/cz" class="btn-ghost btn-lg">← Zpět na úvod</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
+<header class="hero hero--page">
+  <div class="wrap hero-grid">
     <div>
-      <div class="footer-brand">
-        <img src="Assets/JI%20Transparent%20logo.png" alt="JustImagAIne" />
-        <span class="footer-brand-name">JustImagA<em>I</em>ne</span>
+      <p class="label">AI Chatbot</p>
+      <h1>AI Chatbot <span>váš asistent zákazníků</span></h1>
+    </div>
+    <div>
+      <p class="hero-sub">Digitální rozhraní pro komunikaci s uživateli. Komunikuje v reálném čase, poskytuje rychlé a srozumitelné odpovědi a pomáhá efektivně vyřizovat běžné dotazy bez zatěžování zákaznické podpory.</p>
+      <div class="hero-ctas">
+        <a href="/cz#kontakt" class="btn">Mám zájem o AI Chatbota</a>
+        <a href="#vyuziti" class="btn btn--ghost">Kde ho využít</a>
       </div>
-      <p class="footer-desc">Navrhujeme a vytváříme funkční AI řešení — od komunikačních rozhraní až po autonomní systémy a přípravu dat.</p>
-      <a href="mailto:mhruby@justimagaine.com" style="color:var(--orange);font-size:0.85rem;text-decoration:none;">mhruby@justimagaine.com</a>
     </div>
-    <div class="footer-col">
-      <h4>Služby</h4>
-      <ul>
-        <li><a href="/ai-chatbot">AI Chatbot</a></li>
-        <li><a href="/ai-agent">AI Agent</a></li>
-        <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
-    <li><a href="/reference">Reference</a></li>
-      </ul>
+  </div>
+</header>
+
+<section class="bordered">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Co vám chatbot přinese</p>
+      <h2>Šest důvodů, proč nasadit <em>AI Chatbota</em></h2>
     </div>
-    <div class="footer-col">
-      <h4>Právní</h4>
+    <div class="features">
+      <div class="feature"><span class="num">01</span><h3>Dostupnost 24/7</h3><p>Chatbot nikdy nespí, nebere dovolenou a neodchází na oběd. Zákazníci dostanou odpověď okamžitě — ve dne i v noci, o víkendech i svátcích.</p></div>
+      <div class="feature"><span class="num">02</span><h3>Sníží náklady</h3><p>Automatizace rutinních dotazů výrazně snižuje vytížení zákaznické podpory. Méně telefonátů, méně emailů, méně přesčasů — při stejné nebo lepší kvalitě obsluhy.</p></div>
+      <div class="feature"><span class="num">03</span><h3>Zvýší spokojenost</h3><p>Zákazníci nemají rádi čekání. Okamžitá a přesná odpověď na jejich dotaz výrazně zlepšuje uživatelský zážitek a celkový dojem z vaší značky.</p></div>
+      <div class="feature"><span class="num">04</span><h3>Zvýší konverze</h3><p>Chatbot aktivně provádí zákazníky nákupním procesem, odpovídá na produktové dotazy a pomáhá překonat pochybnosti — přímo v momentě rozhodování.</p></div>
+      <div class="feature"><span class="num">05</span><h3>Omezí lidské chyby</h3><p>AI vždy odpovídá podle aktuálních podkladů a nastaveného scénáře. Žádné přeřeknutí, žádná zapomenutá informace — každý zákazník dostane konzistentní odpověď.</p></div>
+      <div class="feature"><span class="num">06</span><h3>Zlepší dojem</h3><p>Moderní, rychlý a inteligentní chatbot signalizuje, že vaše firma drží krok s dobou. Profesionální první dojem, který zákazníci nezapomenou.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="vyuziti" class="tinted">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Kde to funguje</p>
+      <h2>Využití napříč <em>odvětvími</em></h2>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Odvětví">
+      <button class="tab-btn" role="tab" id="tab-ecommerce" aria-controls="panel-ecommerce" aria-selected="true">E-Commerce</button>
+      <button class="tab-btn" role="tab" id="tab-weby" aria-controls="panel-weby" aria-selected="false">Webové stránky</button>
+      <button class="tab-btn" role="tab" id="tab-samosprava" aria-controls="panel-samosprava" aria-selected="false">Samospráva</button>
+    </div>
+
+    <div class="tab-panel" role="tabpanel" id="panel-ecommerce" aria-labelledby="tab-ecommerce">
+      <div>
+        <h3>E-Commerce</h3>
+        <p>AI Chatbot zvládne databázi s 10 000+ produkty a odpovídá jako zkušený prodejní specialista. Řeší reklamace, dotazy na dopravu i dostupnost — vše automaticky.</p>
+        <ul class="checklist">
+          <li>Odborné znalosti celého produktového katalogu</li>
+          <li>Automatické vyřizování reklamací a dotazů na dopravu</li>
+          <li>Aktivní podpora prodejní konverze</li>
+          <li>Personalizované doporučení produktů</li>
+        </ul>
+      </div>
+      <div class="stat">
+        <div class="stat-num">10&nbsp;000<em>+</em></div>
+        <div class="stat-lbl">produktů v databázi bez problémů</div>
+        <p>Chatbot reaguje jako zkušený prodejní asistent — zná celý katalog, zboží, ceny i aktuální skladové zásoby.</p>
+      </div>
+    </div>
+
+    <div class="tab-panel" role="tabpanel" id="panel-weby" aria-labelledby="tab-weby" hidden>
+      <div>
+        <h3>Webové stránky</h3>
+        <p>Pomáhá návštěvníkům orientovat se v obsahu, okamžitě odpovídá na dotazy a výrazně snižuje počet zbytečných emailů a telefonátů na vaši firmu.</p>
+        <ul class="checklist">
+          <li>Navigace uživatelů napříč obsahem webu</li>
+          <li>Okamžitý přístup k informacím</li>
+          <li>Zvýšení zapojení a doby na stránce</li>
+          <li>Snížení počtu zbytečných kontaktů</li>
+        </ul>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>↓</em>60&nbsp;%</div>
+        <div class="stat-lbl">méně příchozích emailů a telefonátů</div>
+        <p>Zákazníci si sami najdou odpovědi — váš tým řeší jen skutečně složité případy.</p>
+      </div>
+    </div>
+
+    <div class="tab-panel" role="tabpanel" id="panel-samosprava" aria-labelledby="tab-samosprava" hidden>
+      <div>
+        <h3>Samospráva a instituce</h3>
+        <p>90% přesnost na webech s 10 000+ URL. Slouží regionálním úřadům a obcím, kde je informační přetížení obrovské a kapacita pracovníků omezená.</p>
+        <ul class="checklist">
+          <li>90% přesnost na rozsáhlých webech</li>
+          <li>Dostupné pro regionální úřady a obce</li>
+          <li>Úspora 1,76 mil. Kč ročně</li>
+          <li>Odbavuje dotazy občanů automaticky</li>
+        </ul>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1,76M<em> Kč</em></div>
+        <div class="stat-lbl">průměrná roční úspora</div>
+        <p>Chatbot zvládne 90 % dotazů občanů — úředníci se mohou soustředit na složitější agendu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap cta-grid">
+    <div>
+      <p class="label">Připraveni začít?</p>
+      <h2>Spusťte AI Chatbota <em>pro váš byznys</em></h2>
+    </div>
+    <div>
+      <p>Zdarma probereme vaši situaci a ukážeme, jak by chatbot konkrétně fungoval u vás.</p>
+      <div class="hero-ctas">
+        <a href="/cz#kontakt" class="btn">Mám zájem o AI Chatbota</a>
+        <a href="/cz" class="btn btn--ghost">Zpět na úvod</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="/cz" class="logo"><img src="Assets/JI%20Transparent%20logo.png" alt="" />JustImagAIne</a>
+        <p>Navrhujeme a vytváříme funkční AI řešení — od komunikačních rozhraní až po autonomní systémy a přípravu dat.</p>
+      </div>
+      <div>
+        <h4>Služby</h4>
+        <ul>
+          <li><a href="/ai-chatbot">AI Chatbot</a></li>
+          <li><a href="/ai-agent">AI Agent</a></li>
+          <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
+          <li><a href="/reference">Reference</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Právní</h4>
+        <ul>
+          <li><a href="/obchodni-podminky">Obchodní podmínky</a></li>
+          <li><a href="/ochrana-osobnich-udaju">Zásady ochrany osobních údajů</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:mhruby@justimagaine.com">mhruby@justimagaine.com</a></li>
+          <li>K Holyni 150/7<br/>15400 Praha 5 – Slivenec</li>
+          <li>IČ: 19468091</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 JustImagAIne · Matyáš Hrubý · Všechna práva vyhrazena</span>
       <ul>
+        <li><a href="/ai-chatbot-english" hreflang="en">English</a></li>
         <li><a href="/obchodni-podminky">Obchodní podmínky</a></li>
         <li><a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Kontakt</h4>
-      <a href="mailto:mhruby@justimagaine.com" class="footer-contact-item"><span>✉️</span><span>mhruby@justimagaine.com</span></a>
-      <div class="footer-contact-item"><span>📍</span><span>K Holyni 150/7, Praha 5</span></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2025 JustImagAIne · Matyáš Hrubý</span>
-    <ul class="footer-legal">
-      <li><a href="/ai-chatbot-english">🇬🇧 English</a></li>
-      <li><a href="/obchodni-podminky">Obchodní podmínky</a></li>
-      <li><a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></li>
-    </ul>
   </div>
 </footer>
 
-<script>
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((e) => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-reveals.forEach(el => io.observe(el));
-const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 40 ? 'rgba(247,246,242,0.97)' : 'rgba(247,246,242,0.8)'; }, {passive:true});
-
-const hamburger = document.getElementById('nav-hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-});
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
-}));
-
-function switchTab(e, id) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  e.target.classList.add('active');
-  document.getElementById('tab-' + id).classList.add('active');
-}
-</script>
+<script src="site.js"></script>
 </body>
 </html>

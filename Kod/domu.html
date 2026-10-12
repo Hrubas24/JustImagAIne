@@ -5,509 +5,261 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JustImagAIne — AI řešení pro váš byznys</title>
   <meta name="description" content="Navrhujeme a vytváříme funkční AI řešení - od komunikačních rozhraní až po autonomní systémy a přípravu dat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="main-nav">
-  <a href="/cz" class="nav-logo">
-    <img src="Assets/JI%20Transparent%20logo.png" alt="JustImagAIne" />
-    <span class="nav-logo-text">JustImagA<em>I</em>ne</span>
-  </a>
-  <ul class="nav-center">
-    <li><a href="/ai-chatbot">AI Chatbot</a></li>
-    <li><a href="/ai-agent">AI Agent</a></li>
-    <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
-    <li><a href="/reference">Reference</a></li>
-  </ul>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-right">
-    <a href="/" class="lang-btn">🇬🇧 EN</a>
-    <a href="#kontakt" class="btn-primary">Nezávazná konzultace →</a>
+<nav>
+  <div class="wrap">
+    <a href="/cz" class="logo"><img src="Assets/JI%20Transparent%20logo.png" alt="" />JustImagAIne</a>
+    <ul class="nav-links">
+      <li><a href="/ai-chatbot">AI Chatbot</a></li>
+      <li><a href="/ai-agent">AI Agent</a></li>
+      <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
+      <li><a href="/reference">Reference</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/" class="lang" hreflang="en">EN</a>
+      <a href="#kontakt" class="btn">Nezávazná konzultace</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/ai-chatbot">AI Chatbot</a>
+    <a href="/ai-agent">AI Agent</a>
+    <a href="/priprava-dat-pro-ai">Příprava dat pro AI</a>
+    <a href="/reference">Reference</a>
+    <a href="/" hreflang="en">English</a>
+    <a href="#kontakt" class="btn">Nezávazná konzultace</a>
   </div>
 </nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="/ai-chatbot">AI Chatbot</a>
-  <a href="/ai-agent">AI Agent</a>
-  <a href="/priprava-dat-pro-ai">Příprava dat pro AI</a>
-  <a href="/reference">Reference</a>
-  <a href="/" style="border-bottom:none;">🇬🇧 EN</a>
-  <a href="#kontakt" class="btn-primary mobile-cta">Nezávazná konzultace →</a>
-</div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="glow glow-orange" style="width:700px;height:700px;top:-200px;right:-100px;"></div>
-  <div class="glow glow-blue" style="width:600px;height:600px;bottom:-250px;left:-150px;"></div>
-
-  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-    <div>
-      <div class="hero-badge"><span class="dot"></span>AI Agentura · Praha</div>
-      <h1 class="hero-h1">
-        Odemkněte sílu AI<br/>
-        <span class="text-gradient">a proměňte ji v inteligentní systémy</span>
-      </h1>
-      <p class="hero-sub">
-        Navrhujeme a vytváříme funkční AI řešení — od komunikačních rozhraní až po autonomní systémy a přípravu dat.
-      </p>
-      <div class="hero-ctas">
-        <a href="#kontakt" class="btn-primary btn-lg">Nezávazná konzultace →</a>
-        <a href="#sluzby" class="btn-ghost btn-lg">Naše služby</a>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="label">AI Agentura · Praha</p>
+        <h1>Odemkněte sílu AI <span>a proměňte ji v&nbsp;inteligentní systémy</span></h1>
+      </div>
+      <div>
+        <p class="hero-sub">Navrhujeme a vytváříme funkční AI řešení — od komunikačních rozhraní až po autonomní systémy a přípravu dat.</p>
+        <div class="hero-ctas">
+          <a href="#kontakt" class="btn">Nezávazná konzultace</a>
+          <a href="#sluzby" class="btn btn--ghost">Naše služby</a>
+        </div>
       </div>
     </div>
-
-    <!-- Visual card -->
-    <div style="position:relative;display:flex;justify-content:center;">
-      <div style="position:absolute;width:80px;height:80px;top:-20px;right:0;background:radial-gradient(circle,rgba(255,97,32,0.25),transparent);border-radius:50%;pointer-events:none;animation:float 6s ease-in-out infinite;"></div>
-      <div style="position:absolute;width:50px;height:50px;bottom:20px;left:-10px;background:radial-gradient(circle,rgba(42,86,214,0.3),transparent);border-radius:50%;pointer-events:none;animation:float 6s ease-in-out 2s infinite;"></div>
-      <div style="background:var(--surf);border:1px solid var(--border);border-radius:20px;padding:28px;width:100%;max-width:420px;box-shadow:var(--shadow-lg);">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;overflow:visible;">
-          <img src="Assets/JI Transparent logo.png" alt="JustImagAIne logo" style="width:44px;height:44px;border-radius:10px;object-fit:contain;flex-shrink:0;" />
-          <div style="min-width:0;flex:1;">
-            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:0.95rem;color:var(--text);white-space:nowrap;overflow:visible;">JustImagAIne Agent</div>
-            <div style="font-size:0.75rem;color:var(--muted);">Aktivní · Odpovídá</div>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="padding:10px 14px;border-radius:12px 12px 2px 12px;background:rgba(42,86,214,0.1);border:1px solid rgba(42,86,214,0.2);color:var(--blue);font-size:0.82rem;align-self:flex-end;opacity:0;animation:bubble-in 0.5s ease 0.3s forwards;">Jak mi AI může pomoci s byznysem?</div>
-          <div style="padding:10px 14px;border-radius:12px 12px 12px 2px;background:var(--bg);border:1px solid var(--border);font-size:0.82rem;align-self:flex-start;color:var(--text);opacity:0;animation:bubble-in 0.5s ease 1s forwards;">Analyzuji vaše procesy a navrhnu, kde AI ušetří čas, sníží náklady a zvýší konverze.</div>
-          <div style="padding:10px 14px;border-radius:12px 12px 2px 12px;background:rgba(42,86,214,0.1);border:1px solid rgba(42,86,214,0.2);color:var(--blue);font-size:0.82rem;align-self:flex-end;opacity:0;animation:bubble-in 0.5s ease 1.8s forwards;">Skvěle, chci to vyzkoušet.</div>
-          <div style="display:flex;gap:4px;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:12px 12px 12px 2px;align-self:flex-start;opacity:0;animation:bubble-in 0.5s ease 2.8s forwards;">
-            <span style="width:5px;height:5px;border-radius:50%;background:var(--orange);animation:typing 1.2s ease-in-out infinite;display:inline-block;"></span>
-            <span style="width:5px;height:5px;border-radius:50%;background:var(--orange);animation:typing 1.2s ease-in-out 0.2s infinite;display:inline-block;"></span>
-            <span style="width:5px;height:5px;border-radius:50%;background:var(--orange);animation:typing 1.2s ease-in-out 0.4s infinite;display:inline-block;"></span>
-          </div>
-        </div>
-      </div>
+    <div class="clients">
+      <span>Naše řešení používají</span>
+      <ul>
+        <li><img src="Assets/clients/fbfit.png" alt="FBFit" class="logo-fbfit" /></li>
+        <li><img src="Assets/clients/greenwash.png" alt="Green-wash" class="logo-greenwash" /></li>
+        <li><img src="Assets/clients/furnature.png" alt="Furnature" class="logo-furnature" /></li>
+        <li><img src="Assets/clients/oysri.png" alt="Oysrí" class="logo-oysri" /></li>
+        <li><img src="Assets/clients/swimrelax.png" alt="Swim&amp;Relax" class="logo-swimrelax" /></li>
+        <li><img src="Assets/clients/dataapex.svg" alt="DataApex" class="logo-dataapex" /></li>
+      </ul>
     </div>
   </div>
-</section>
+</header>
 
-<!-- SERVICES -->
-<section id="sluzby" style="padding:80px 5vw;">
-  <div class="container">
-    <p class="section-label reveal">Naše služby</p>
-    <h2 class="section-h2 reveal reveal-delay-1">Tři cesty k chytřejšímu<br/>podnikání s AI</h2>
-    <p class="section-sub reveal reveal-delay-2">Každé řešení tvoříme na míru — tak, aby fungovalo v praxi a přinášelo měřitelné výsledky.</p>
-
-    <div class="grid-3" style="margin-top:48px;">
-      <a href="/ai-chatbot" class="card reveal reveal-delay-1" style="text-decoration:none;display:block;">
-        <div class="card-icon">💬</div>
+<section id="sluzby" class="bordered">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Naše služby</p>
+      <h2>Tři cesty k <em>chytřejšímu</em> podnikání s&nbsp;AI</h2>
+      <p>Každé řešení tvoříme na míru — tak, aby fungovalo v praxi a přinášelo měřitelné výsledky.</p>
+    </div>
+    <div class="services">
+      <a href="/ai-chatbot" class="service">
+        <span class="num">01</span>
         <h3>AI Chatbot</h3>
         <p>Digitální rozhraní pro komunikaci s uživateli. Komunikuje v reálném čase, poskytuje rychlé a srozumitelné odpovědi a pomáhá efektivně vyřizovat běžné dotazy bez zatěžování zákaznické podpory.</p>
-        <span class="card-link">Zjistit více →</span>
+        <span class="more">Zjistit více</span>
       </a>
-
-      <a href="/ai-agent" class="card reveal reveal-delay-2" style="text-decoration:none;display:block;">
-        <div class="card-icon">🤖</div>
+      <a href="/ai-agent" class="service">
+        <span class="num">02</span>
         <h3>AI Agent</h3>
         <p>Softwarová inteligence schopná plánovat, vyhodnocovat a realizovat komplexní úkoly v několika krocích bez nutnosti řízení člověkem. Převádí opakované a proměnlivé procesy do autonomní logiky.</p>
-        <span class="card-link">Zjistit více →</span>
+        <span class="more">Zjistit více</span>
       </a>
-
-      <a href="/priprava-dat-pro-ai" class="card reveal reveal-delay-3" style="text-decoration:none;display:block;">
-        <div class="card-icon">🗃️</div>
+      <a href="/priprava-dat-pro-ai" class="service">
+        <span class="num">03</span>
         <h3>Příprava dat pro AI</h3>
         <p>Strukturování, čištění a transformace dat tak, aby s nimi AI dokázalo spolehlivě pracovat a rozhodovat. Výsledkem jsou konzistentní a kontrolovatelné datové vstupy pro stabilní chování AI systémů.</p>
-        <span class="card-link">Zjistit více →</span>
+        <span class="more">Zjistit více</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- HOW AI HELPS -->
-<section style="background:var(--surf);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 5vw;">
-  <div class="container">
-    <p class="section-label reveal">Benefity</p>
-    <h2 class="section-h2 reveal reveal-delay-1">Jak vám AI pomůže</h2>
-
-    <div class="grid-3" style="margin-top:48px;gap:32px;">
-      <!-- Column 1 -->
-      <div class="reveal">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
-          <div class="card-icon" style="margin-bottom:0;">👥</div>
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.02em;">Komunikace se zákazníkem</h3>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">📉</div>
-          <div>
-            <h4>Méně emailů a telefonátů</h4>
-            <p>AI vyřídí běžné dotazy automaticky — váš tým se soustředí na věci, které opravdu potřebují lidi.</p>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">🕐</div>
-          <div>
-            <h4>Dostupnost 24/7</h4>
-            <p>Odpovídá okamžitě, bez čekání, kdykoli zákazník potřebuje pomoc.</p>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">🗺️</div>
-          <div>
-            <h4>Lepší navigace na webu</h4>
-            <p>Pomáhá uživatelům najít to, co hledají — rychleji a bez frustrace.</p>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">📊</div>
-          <div>
-            <h4>Odpovědi z vašich dat</h4>
-            <p>AI trénujeme na vašich podkladech — odpovídá přesně a relevantně.</p>
-          </div>
-        </div>
+<section class="tinted">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Benefity</p>
+      <h2>Jak vám AI <em>pomůže</em></h2>
+    </div>
+    <div class="benefits">
+      <div>
+        <h3>Komunikace se zákazníkem</h3>
+        <div class="benefit"><h4>Méně emailů a telefonátů</h4><p>AI vyřídí běžné dotazy automaticky — váš tým se soustředí na věci, které opravdu potřebují lidi.</p></div>
+        <div class="benefit"><h4>Dostupnost 24/7</h4><p>Odpovídá okamžitě, bez čekání, kdykoli zákazník potřebuje pomoc.</p></div>
+        <div class="benefit"><h4>Lepší navigace na webu</h4><p>Pomáhá uživatelům najít to, co hledají — rychleji a bez frustrace.</p></div>
+        <div class="benefit"><h4>Odpovědi z vašich dat</h4><p>AI trénujeme na vašich podkladech — odpovídá přesně a relevantně.</p></div>
       </div>
-
-      <!-- Column 2 -->
-      <div class="reveal reveal-delay-1">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
-          <div class="card-icon" style="margin-bottom:0;">⚙️</div>
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.02em;">Interní procesy</h3>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">🔄</div>
-          <div>
-            <h4>Automatizace opakování</h4>
-            <p>Rutinní úkoly přebere AI agent — od zpracování dokumentů po interní reporty.</p>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">⚡</div>
-          <div>
-            <h4>Rychlejší rozhodování</h4>
-            <p>AI vyhodnocuje data v reálném čase a dává vašemu týmu aktuální podklady.</p>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">🔗</div>
-          <div>
-            <h4>Integrace systémů</h4>
-            <p>Propojujeme AI s vašimi stávajícími nástroji — CRM, ERP, databáze, API.</p>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">📋</div>
-          <div>
-            <h4>Monitoring a alerting</h4>
-            <p>Systém hlídá výjimky a automaticky upozorní na to, co potřebuje pozornost.</p>
-          </div>
-        </div>
+      <div>
+        <h3>Interní procesy</h3>
+        <div class="benefit"><h4>Automatizace opakování</h4><p>Rutinní úkoly přebere AI agent — od zpracování dokumentů po interní reporty.</p></div>
+        <div class="benefit"><h4>Rychlejší rozhodování</h4><p>AI vyhodnocuje data v reálném čase a dává vašemu týmu aktuální podklady.</p></div>
+        <div class="benefit"><h4>Integrace systémů</h4><p>Propojujeme AI s vašimi stávajícími nástroji — CRM, ERP, databáze, API.</p></div>
+        <div class="benefit"><h4>Monitoring a alerting</h4><p>Systém hlídá výjimky a automaticky upozorní na to, co potřebuje pozornost.</p></div>
       </div>
-
-      <!-- Column 3 -->
-      <div class="reveal reveal-delay-2">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
-          <div class="card-icon" style="margin-bottom:0;">🗄️</div>
-          <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-0.02em;">Data & struktura</h3>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">🧹</div>
-          <div>
-            <h4>Čištění a deduplikace</h4>
-            <p>Odstraníme nekonzistence, duplicity a chybějící metadata z vašich datových sad.</p>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">🏗️</div>
-          <div>
-            <h4>Strukturování pro AI</h4>
-            <p>Transformujeme raw data do formátu, se kterým AI dokáže spolehlivě pracovat.</p>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">🎯</div>
-          <div>
-            <h4>Stabilní AI výstupy</h4>
-            <p>Kvalitní vstupní data = předvídatelné a kontrolovatelné chování AI systémů.</p>
-          </div>
-        </div>
-        <div class="benefit-row">
-          <div class="benefit-icon">🔒</div>
-          <div>
-            <h4>Bezpečnost a soulad</h4>
-            <p>Zpracování dat v souladu s GDPR a standardy kybernetické bezpečnosti.</p>
-          </div>
-        </div>
+      <div>
+        <h3>Data &amp; struktura</h3>
+        <div class="benefit"><h4>Čištění a deduplikace</h4><p>Odstraníme nekonzistence, duplicity a chybějící metadata z vašich datových sad.</p></div>
+        <div class="benefit"><h4>Strukturování pro AI</h4><p>Transformujeme raw data do formátu, se kterým AI dokáže spolehlivě pracovat.</p></div>
+        <div class="benefit"><h4>Stabilní AI výstupy</h4><p>Kvalitní vstupní data = předvídatelné a kontrolovatelné chování AI systémů.</p></div>
+        <div class="benefit"><h4>Bezpečnost a soulad</h4><p>Zpracování dat v souladu s GDPR a standardy kybernetické bezpečnosti.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ROI CALCULATOR -->
-<section class="roi-section">
-  <div class="container">
-    <p class="section-label reveal">Kalkulačka úspor</p>
-    <h2 class="section-h2 reveal reveal-delay-1">Kolik vám AI ušetří?</h2>
-    <p class="section-sub reveal reveal-delay-2">Zadejte parametry vašeho byznysu a okamžitě uvidíte odhadovanou úsporu.</p>
-
-    <div style="background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:32px;margin-top:40px;box-shadow:var(--shadow-sm);">
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label">Kalkulačka úspor</p>
+      <h2>Kolik vám AI <em>ušetří</em>?</h2>
+      <p>Zadejte parametry vašeho byznysu a okamžitě uvidíte odhadovanou úsporu.</p>
+    </div>
+    <div class="roi">
       <div class="roi-grid">
         <div class="roi-field">
-          <label>Počet dotazů / měsíc</label>
+          <label for="r-inquiries">Počet dotazů / měsíc</label>
           <div class="roi-val" id="rv-inquiries">800</div>
-          <input type="range" min="100" max="5000" step="50" value="800" oninput="updateROI()" id="r-inquiries"/>
+          <input type="range" min="100" max="5000" step="50" value="800" id="r-inquiries" />
         </div>
         <div class="roi-field">
-          <label>Průměrná mzda (Kč/hod)</label>
+          <label for="r-wage">Průměrná mzda (Kč/hod)</label>
           <div class="roi-val" id="rv-wage">350 Kč</div>
-          <input type="range" min="150" max="800" step="10" value="350" oninput="updateROI()" id="r-wage"/>
+          <input type="range" min="150" max="800" step="10" value="350" id="r-wage" />
         </div>
         <div class="roi-field">
-          <label>Průměrný čas vyřízení</label>
+          <label for="r-time">Průměrný čas vyřízení</label>
           <div class="roi-val" id="rv-time">8 min</div>
-          <input type="range" min="2" max="30" step="1" value="8" oninput="updateROI()" id="r-time"/>
+          <input type="range" min="2" max="30" step="1" value="8" id="r-time" />
         </div>
         <div class="roi-field">
-          <label>Podíl dotazů pro AI</label>
+          <label for="r-ai">Podíl dotazů pro AI</label>
           <div class="roi-val" id="rv-ai">70 %</div>
-          <input type="range" min="20" max="95" step="5" value="70" oninput="updateROI()" id="r-ai"/>
+          <input type="range" min="20" max="95" step="5" value="70" id="r-ai" />
         </div>
       </div>
       <div class="roi-results">
-        <div class="roi-result">
-          <div class="roi-result-num" id="res-hours">62 hod</div>
-          <div class="roi-result-lbl">Ušetřený čas měsíčně</div>
-        </div>
-        <div class="roi-result">
-          <div class="roi-result-num" id="res-cost">21 700 Kč</div>
-          <div class="roi-result-lbl">Měsíční úspora nákladů</div>
-        </div>
-        <div class="roi-result">
-          <div class="roi-result-num" id="res-year">260 000 Kč</div>
-          <div class="roi-result-lbl">Roční potenciál úspor</div>
-        </div>
+        <div class="roi-result"><div class="roi-result-num" id="res-hours">62 hod</div><div class="roi-result-lbl">Ušetřený čas měsíčně</div></div>
+        <div class="roi-result"><div class="roi-result-num" id="res-cost">21 700 Kč</div><div class="roi-result-lbl">Měsíční úspora nákladů</div></div>
+        <div class="roi-result"><div class="roi-result-num" id="res-year">260 000 Kč</div><div class="roi-result-lbl">Roční potenciál úspor</div></div>
       </div>
-      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-        <p style="font-size:0.78rem;color:var(--muted);">* Orientační odhad. Skutečné výsledky závisí na konkrétním nasazení.</p>
-        <a href="#kontakt" class="btn-primary">Chci přesnou kalkulaci →</a>
+      <div class="roi-foot">
+        <p>* Orientační odhad. Skutečné výsledky závisí na konkrétním nasazení.</p>
+        <a href="#kontakt" class="btn">Chci přesnou kalkulaci</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="kontakt" class="contact-section">
-  <div class="container contact-grid">
-    <div class="contact-info">
-      <p class="section-label reveal">Kontakt</p>
-      <h2 class="reveal reveal-delay-1">Pojďme si promluvit<br/>o vašem projektu</h2>
-      <p class="reveal reveal-delay-2">Napište nám — rádi zdarma probereme vaši situaci a navrhneme, jak vám AI může konkrétně pomoct.</p>
-
-      <a href="mailto:mhruby@justimagaine.com" class="contact-detail reveal reveal-delay-2">
-        <div class="contact-detail-icon">✉️</div>
-        mhruby@justimagaine.com
-      </a>
-      <div class="contact-detail reveal reveal-delay-3">
-        <div class="contact-detail-icon">📍</div>
-        K Holyni 150/7, 15400 Praha 5 – Slivenec
-      </div>
-      <div class="contact-detail reveal reveal-delay-3" style="margin-top:24px;padding-top:24px;border-top:1px solid var(--border);font-size:0.8rem;">
-        <div>
-          <strong style="color:var(--text);">Matyáš Hrubý</strong><br/>
-          IČ: 19468091 · Živnostenský rejstřík, MČ Praha 16
-        </div>
+<section id="kontakt" class="contact bordered">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="label">Kontakt</p>
+      <h2>Pojďme si <em>promluvit</em> o&nbsp;vašem projektu</h2>
+      <p class="contact-intro">Napište nám — rádi zdarma probereme vaši situaci a navrhneme, jak vám AI může konkrétně pomoct.</p>
+      <div class="contact-details">
+        <a href="mailto:mhruby@justimagaine.com">mhruby@justimagaine.com</a>
+        <span>K Holyni 150/7, 15400 Praha 5 – Slivenec</span>
+        <span class="owner"><strong>Matyáš Hrubý</strong> · IČ: 19468091 · Živnostenský rejstřík, MČ Praha 16</span>
       </div>
     </div>
-
-    <div class="form-panel reveal reveal-delay-2">
-      <form id="contact-form" name="kontakt" method="POST" netlify onsubmit="handleSubmit(event)">
+    <div>
+      <form id="contact-form" name="kontakt" method="POST" netlify>
         <input type="hidden" name="form-name" value="kontakt" />
-        <div class="form-progress-bar"><div class="form-progress-fill" id="form-prog"></div></div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Jméno</label>
-            <div class="form-field-wrap">
-              <input type="text" name="name" id="f-name" placeholder="Jan Novák" required oninput="liveValidate()" />
-              <span class="form-field-icon" id="fi-name"></span>
-            </div>
-            <div class="form-hint" id="fh-name"></div>
+        <div class="row2">
+          <div>
+            <label for="f-name">Jméno</label>
+            <input type="text" name="name" id="f-name" placeholder="Jan Novák" required />
+            <p class="hint" id="fh-name"></p>
           </div>
-          <div class="form-group">
-            <label>Společnost</label>
-            <div class="form-field-wrap">
-              <input type="text" name="company" id="f-company" placeholder="Vaše firma" oninput="liveValidate()" />
-              <span class="form-field-icon" id="fi-company"></span>
-            </div>
+          <div>
+            <label for="f-company">Společnost</label>
+            <input type="text" name="company" id="f-company" placeholder="Vaše firma" />
           </div>
         </div>
-        <div class="form-group">
-          <label>Email</label>
-          <div class="form-field-wrap">
-            <input type="email" name="email" id="f-email" placeholder="jan@firma.cz" required oninput="liveValidate()" />
-            <span class="form-field-icon" id="fi-email"></span>
-          </div>
-          <div class="form-hint" id="fh-email"></div>
+        <div>
+          <label for="f-email">Email</label>
+          <input type="email" name="email" id="f-email" placeholder="jan@firma.cz" required />
+          <p class="hint" id="fh-email"></p>
         </div>
-        <div class="form-group">
-          <label>Zpráva <span class="form-charcount" id="f-charcount">0 / 500</span></label>
-          <div class="form-field-wrap">
-            <textarea name="message" id="f-msg" placeholder="Popište váš projekt nebo otázku..." required maxlength="500" oninput="liveValidate()"></textarea>
-          </div>
-          <div class="form-hint" id="fh-msg"></div>
+        <div>
+          <label for="f-msg">Zpráva <span id="f-charcount">0 / 500</span></label>
+          <textarea name="message" id="f-msg" placeholder="Popište váš projekt nebo otázku..." required maxlength="500"></textarea>
+          <p class="hint" id="fh-msg"></p>
         </div>
-        <button type="submit" class="btn-primary" id="f-submit" style="width:100%;justify-content:center;padding:14px;" disabled>Odeslat zprávu →</button>
+        <button type="submit" class="btn" id="f-submit" disabled>Odeslat zprávu</button>
       </form>
       <div class="form-success" id="form-success">
-        ✅ Zpráva odeslána! Ozveme se vám do 24 hodin.
+        <h3>Zpráva odeslána.</h3>
+        <p>Ozveme se vám do 24 hodin.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand">
-        <img src="Assets/JI%20Transparent%20logo.png" alt="JustImagAIne" />
-        <span class="footer-brand-name">JustImagA<em>I</em>ne</span>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="/cz" class="logo"><img src="Assets/JI%20Transparent%20logo.png" alt="" />JustImagAIne</a>
+        <p>Navrhujeme a vytváříme funkční AI řešení — od komunikačních rozhraní až po autonomní systémy a přípravu dat.</p>
       </div>
-      <p class="footer-desc">Navrhujeme a vytváříme funkční AI řešení — od komunikačních rozhraní až po autonomní systémy a přípravu dat.</p>
-      <a href="mailto:mhruby@justimagaine.com" style="color:var(--orange);font-size:0.85rem;text-decoration:none;">mhruby@justimagaine.com</a>
+      <div>
+        <h4>Služby</h4>
+        <ul>
+          <li><a href="/ai-chatbot">AI Chatbot</a></li>
+          <li><a href="/ai-agent">AI Agent</a></li>
+          <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
+          <li><a href="/reference">Reference</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Právní</h4>
+        <ul>
+          <li><a href="/obchodni-podminky">Obchodní podmínky</a></li>
+          <li><a href="/ochrana-osobnich-udaju">Zásady ochrany osobních údajů</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="mailto:mhruby@justimagaine.com">mhruby@justimagaine.com</a></li>
+          <li>K Holyni 150/7<br/>15400 Praha 5 – Slivenec</li>
+          <li>IČ: 19468091</li>
+        </ul>
+      </div>
     </div>
-
-    <div class="footer-col">
-      <h4>Služby</h4>
+    <div class="foot-bottom">
+      <span>© 2025 JustImagAIne · Matyáš Hrubý · Všechna práva vyhrazena</span>
       <ul>
-        <li><a href="/ai-chatbot">AI Chatbot</a></li>
-        <li><a href="/ai-agent">AI Agent</a></li>
-        <li><a href="/priprava-dat-pro-ai">Příprava dat pro AI</a></li>
-    <li><a href="/reference">Reference</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Právní</h4>
-      <ul>
+        <li><a href="/" hreflang="en">English</a></li>
         <li><a href="/obchodni-podminky">Obchodní podmínky</a></li>
-        <li><a href="/ochrana-osobnich-udaju">Zásady ochrany osobních údajů</a></li>
+        <li><a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></li>
       </ul>
     </div>
-
-    <div class="footer-col">
-      <h4>Kontakt</h4>
-      <a href="mailto:mhruby@justimagaine.com" class="footer-contact-item">
-        <span>✉️</span><span>mhruby@justimagaine.com</span>
-      </a>
-      <div class="footer-contact-item">
-        <span>📍</span><span>K Holyni 150/7<br/>15400 Praha 5 – Slivenec</span>
-      </div>
-      <div class="footer-contact-item">
-        <span>🏢</span><span>IČ: 19468091</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2025 JustImagAIne · Matyáš Hrubý · Všechna práva vyhrazena</span>
-    <ul class="footer-legal">
-      <li><a href="/">🇬🇧 English</a></li>
-      <li><a href="/obchodni-podminky">Obchodní podmínky</a></li>
-      <li><a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></li>
-    </ul>
   </div>
 </footer>
 
-<style>
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-@keyframes bubble-in { to{opacity:1;transform:translateY(0)} }
-@keyframes typing { 0%,100%{opacity:0.3;transform:translateY(0)} 50%{opacity:1;transform:translateY(-3px)} }
-.hero { display: flex; align-items: center; }
-@media(max-width:900px){.hero .container{grid-template-columns:1fr!important}.hero .container>div:last-child{display:none}}
-</style>
-
-<script>
-// ── REVEAL ──
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => io.observe(el));
-
-// ── NAV ──
-const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => {
-  nav.style.background = window.scrollY > 40 ? 'rgba(247,246,242,0.97)' : 'rgba(247,246,242,0.8)';
-}, { passive: true });
-
-// ── HAMBURGER ──
-const hamburger = document.getElementById('nav-hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-});
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
-}));
-
-// ── ROI CALCULATOR ──
-function updateROI() {
-  const inquiries = +document.getElementById('r-inquiries').value;
-  const wage = +document.getElementById('r-wage').value;
-  const time = +document.getElementById('r-time').value;
-  const ai = +document.getElementById('r-ai').value / 100;
-  document.getElementById('rv-inquiries').textContent = inquiries.toLocaleString('cs');
-  document.getElementById('rv-wage').textContent = wage + ' Kč';
-  document.getElementById('rv-time').textContent = time + ' min';
-  document.getElementById('rv-ai').textContent = Math.round(ai * 100) + ' %';
-  const hoursPerMonth = (inquiries * ai * time) / 60;
-  const costPerMonth = hoursPerMonth * wage;
-  document.getElementById('res-hours').textContent = Math.round(hoursPerMonth) + ' hod';
-  document.getElementById('res-cost').textContent = Math.round(costPerMonth / 100) * 100 + ' Kč';
-  document.getElementById('res-year').textContent = (Math.round(costPerMonth * 12 / 1000) * 1000).toLocaleString('cs') + ' Kč';
-}
-if (document.getElementById('r-inquiries')) updateROI();
-
-// ── SMART FORM ──
-function liveValidate() {
-  const name = document.getElementById('f-name');
-  const email = document.getElementById('f-email');
-  const msg = document.getElementById('f-msg');
-  let filled = 0;
-
-  function setField(inp, iconEl, hintEl, ok, hint) {
-    if (inp.value.length === 0) { inp.className = ''; if(iconEl){iconEl.textContent='';iconEl.className='form-field-icon';} if(hintEl)hintEl.textContent=''; return false; }
-    inp.className = ok ? 'valid' : 'invalid';
-    if (iconEl) { iconEl.textContent = ok ? '✓' : '✗'; iconEl.className = 'form-field-icon show'; iconEl.style.color = ok ? '#16a34a' : '#dc2626'; }
-    if (hintEl) { hintEl.textContent = ok ? '' : hint; hintEl.className = ok ? 'form-hint' : 'form-hint err'; }
-    return ok;
-  }
-
-  if (setField(name, document.getElementById('fi-name'), document.getElementById('fh-name'), name.value.trim().length > 1, 'Zadejte celé jméno')) filled++;
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
-  if (setField(email, document.getElementById('fi-email'), document.getElementById('fh-email'), emailOk, 'Neplatný formát emailu')) filled++;
-  const msgOk = msg.value.trim().length > 10;
-  document.getElementById('f-charcount').textContent = msg.value.length + ' / 500';
-  if (setField(msg, null, document.getElementById('fh-msg'), msgOk, 'Napište alespoň pár vět')) filled++;
-
-  document.getElementById('form-prog').style.width = Math.round((filled / 3) * 100) + '%';
-  document.getElementById('f-submit').disabled = filled < 3;
-}
-
-// ── FORM SUBMIT ──
-async function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button[type=submit]');
-  btn.textContent = 'Odesílám...';
-  btn.disabled = true;
-  const data = new URLSearchParams(new FormData(form)).toString();
-  try {
-    const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data });
-    if (res.ok) {
-      form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    } else { throw new Error('Status ' + res.status); }
-  } catch(err) {
-    btn.textContent = 'Chyba, zkus znovu';
-    btn.disabled = false;
-  }
-}
-</script>
+<script src="site.js"></script>
 </body>
 </html>

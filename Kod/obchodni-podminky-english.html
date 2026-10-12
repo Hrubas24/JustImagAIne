@@ -4,40 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms &amp; Conditions — JustImagAIne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<nav id="main-nav">
-  <a href="/" class="nav-logo">
-    <img src="Assets/JI%20Transparent%20logo.png" alt="JustImagAIne" />
-    <span class="nav-logo-text">JustImagA<em>I</em>ne</span>
-  </a>
-  <ul class="nav-center">
-    <li><a href="/ai-chatbot-english">AI Chatbot</a></li>
-    <li><a href="/ai-agent-english">AI Agent</a></li>
-    <li><a href="/priprava-dat-pro-ai-english">Data Preparation</a></li>
-    <li><a href="/reference-english">References</a></li>
-  </ul>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-right">
-    <a href="/obchodni-podminky" class="lang-btn">🇨🇿 CZ</a>
-    <a href="/#contact" class="btn-primary">Contact →</a>
+<nav>
+  <div class="wrap">
+    <a href="/" class="logo"><img src="Assets/JI%20Transparent%20logo.png" alt="" />JustImagAIne</a>
+    <ul class="nav-links">
+      <li><a href="/ai-chatbot-english">AI Chatbot</a></li>
+      <li><a href="/ai-agent-english">AI Agent</a></li>
+      <li><a href="/priprava-dat-pro-ai-english">Data Preparation</a></li>
+      <li><a href="/reference-english">References</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/obchodni-podminky" class="lang" hreflang="cs">CZ</a>
+      <a href="/#contact" class="btn">Free Consultation</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/ai-chatbot-english">AI Chatbot</a>
+    <a href="/ai-agent-english">AI Agent</a>
+    <a href="/priprava-dat-pro-ai-english">Data Preparation</a>
+    <a href="/reference-english">References</a>
+    <a href="/obchodni-podminky" hreflang="cs">Čeština</a>
+    <a href="/#contact" class="btn">Free Consultation</a>
   </div>
 </nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="/ai-chatbot-english">AI Chatbot</a>
-  <a href="/ai-agent-english">AI Agent</a>
-  <a href="/priprava-dat-pro-ai-english">Data Preparation</a>
-  <a href="/reference-english">References</a>
-  <a href="/obchodni-podminky" style="border-bottom:none;">🇨🇿 CZ</a>
-  <a href="/#contact" class="btn-primary mobile-cta">Contact →</a>
-</div>
 
-<section style="padding:140px 5vw 80px;">
-  <div class="prose">
+<main class="legal">
+  <div class="wrap">
+    <div class="prose">
     <h1>Terms &amp; Conditions</h1>
     <p class="meta">Effective as of: November 12, 2025 · Just ImagAIne, Matyáš Hrubý, Business ID: 19468091</p>
 
@@ -74,36 +75,52 @@
     <h2>Contact</h2>
     <p>Matyáš Hrubý · <a href="mailto:mhruby@justimagaine.com">mhruby@justimagaine.com</a> · K Holyni 150/7, 15400 Prague 5 – Slivenec · Business ID: 19468091</p>
   </div>
-</section>
+  </div>
+</main>
 
-<footer style="border-top:1px solid var(--border);padding:32px 5vw;">
-  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-    <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
-      <img src="Assets/JI%20Transparent%20logo.png" alt="JustImagAIne" style="height:32px;width:32px;object-fit:contain;" />
-      <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:0.95rem;">JustImagA<em style="color:var(--orange);font-style:normal;">I</em>ne</span>
-    </a>
-    <span style="color:var(--muted);font-size:0.8rem;">© 2025 JustImagAIne · Matyáš Hrubý</span>
-    <div style="display:flex;gap:20px;">
-      <a href="/obchodni-podminky-english" style="color:var(--muted);font-size:0.8rem;text-decoration:none;">Terms &amp; Conditions</a>
-      <a href="/ochrana-osobnich-udaju-english" style="color:var(--muted);font-size:0.8rem;text-decoration:none;">Privacy Policy</a>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="/" class="logo"><img src="Assets/JI%20Transparent%20logo.png" alt="" />JustImagAIne</a>
+        <p>We design and create functional AI solutions — from communication interfaces to autonomous systems and data preparation.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/ai-chatbot-english">AI Chatbot</a></li>
+          <li><a href="/ai-agent-english">AI Agent</a></li>
+          <li><a href="/priprava-dat-pro-ai-english">Data Preparation</a></li>
+          <li><a href="/reference-english">References</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/obchodni-podminky-english">Terms &amp; Conditions</a></li>
+          <li><a href="/ochrana-osobnich-udaju-english">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:mhruby@justimagaine.com">mhruby@justimagaine.com</a></li>
+          <li>K Holyni 150/7<br/>15400 Praha 5 – Slivenec</li>
+          <li>Business ID: 19468091</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 JustImagAIne · Matyáš Hrubý · All rights reserved</span>
+      <ul>
+        <li><a href="/obchodni-podminky" hreflang="cs">Čeština</a></li>
+        <li><a href="/obchodni-podminky-english">Terms &amp; Conditions</a></li>
+        <li><a href="/ochrana-osobnich-udaju-english">Privacy Policy</a></li>
+      </ul>
     </div>
   </div>
 </footer>
 
-<script>
-const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 40 ? 'rgba(247,246,242,0.97)' : 'rgba(247,246,242,0.8)'; }, {passive:true});
-
-const hamburger = document.getElementById('nav-hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-});
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
-}));
-</script>
+<script src="site.js"></script>
 </body>
 </html>
