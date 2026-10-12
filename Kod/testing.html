@@ -35,11 +35,17 @@
   </style>
 </head>
 <body>
-  <h1>Widget testovací stránka</h1>
-  <p>justimagaine.com/testing</p>
+  <h1 id="test-title">Stránka není dostupná</h1>
+  <p id="test-sub" hidden>justimagaine.com/testing</p>
 
   <script type="text/javascript">
   (function (d, t) {
+    /* The widget only loads with the access key in the URL: /testing?klic=5uUQouhc
+       Without it nothing is loaded, so random visitors and bots can't use the chatbot. */
+    if (new URLSearchParams(location.search).get("klic") !== "5uUQouhc") return;
+    d.getElementById("test-title").textContent = "Widget testovací stránka";
+    d.getElementById("test-sub").hidden = false;
+
     var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
 
     function loadVoiceflow(payload) {
